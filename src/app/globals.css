@@ -1,33 +1,19 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --main-yellow: #ffb400;
+  --main-dark-yellow: #a77905;
+  --smokey-dark: #000000de;
+  --main-bg-dark: #111111;
 }
 
 html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Playfair Display", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  /* min-height: 100vh; */
+  background-color: var(--main-bg-dark);
 }
 
 a {
@@ -35,8 +21,96 @@ a {
   text-decoration: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.dark {
+  background-color: var(--bs-dark);
+  color: whitesmoke;
+}
+
+.oblique-yellow-background {
+  background-color: var(--main-yellow);
+  position: fixed;
+  top: -80px;
+  bottom: 0;
+  left: -200px;
+  width: 35%;
+  transform: matrix(5, 21, 1, 0, -150, 0);
+}
+
+.hero {
+  color: var(--main-yellow);
+  background-color: var(--smokey-dark);
+  border-radius: 10px;
+}
+
+.nav-link {
+  width: 3.5rem;
+  background-color: #2b2a2a;
+  color: white;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: width 0.3s ease-out;
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 2px 3px 6px 1px black;
+}
+
+.nav-link.current{
+  background-color: var(--main-yellow);
+  color: white!important;
+}
+
+.nav-link:hover{
+  width: 8rem;
+  color: white;
+  background-color: var(--main-yellow);
+}
+
+.home-nav-link-mobile {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  color: var(--main-yellow);
+  background-color: var(--main-bg-dark);
+  padding: 1rem 0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.side-header-container {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  padding-right: 1rem;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 992px){
+  .nav-link {
+    width: 100% !important;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
   }
 }

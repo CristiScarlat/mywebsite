@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Binary Search Algorithm</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+    <article>
+        <!---->
+        <header aria-label="Article header" class="pt4">
+            <!---->
+
+            <figure class="relative">
+                <div class="reader-cover-image__wrapper-right-rail-layout">
+                    <img src="https://media.licdn.com/dms/image/v2/C4E12AQF55GCPmG85PA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1532066550011?e=1735171200&amp;v=beta&amp;t=-WN0VTTlOOALOCgKl-pEUYlnIf5J4lbec3BmRtklovQ"
+                        loading="lazy" id="ember1704" class="reader-cover-image__img evi-image lazy-image ember-view">
+                </div>
+                <!---->
+            </figure>
+
+            <h1 dir="ltr" class="reader-article-header__title">
+
+                <span data-scaffold-immersive-reader-title="">
+                    Implementing a simple one dimension Kalman Filter in NodeJS
+                </span>
+
+            </h1>
+        </header>
+
+        <div class="relative reader__grid">
+            <div class="reader-author-info__container">
+                <div class="display-flex align-items-center justify-space-between">
+
+                    <div class="reader-author-info__inner-container">
+                        <div id="ember1705" class="artdeco-entity-lockup artdeco-entity-lockup--size-3 ember-view">
+                            <div id="ember1706"
+                                class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view"
+                                type="circle">
+                                <a href="/in/cristian-scarlat-6839a942/" id="ember1707" class="ember-view">
+
+                                    <div class="feed-shared-avatar-image b0 ">
+                                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQHX8NZyHpVXgg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1680593615369?e=1735171200&amp;v=beta&amp;t=qkdCtCgCVXg8gGA7DWKyX2l-G2_flvrray2KQ96cMLw"
+                                            alt="Cristian Scarlat" id="ember1708"
+                                            class="avatar undefined EntityPhoto-circle-4 evi-image ember-view">
+                                    </div>
+
+                                </a>
+
+                            </div>
+                            <div id="ember1709"
+                                class="reader-author-info__content artdeco-entity-lockup__content ember-view">
+                                <div id="ember1710"
+                                    class="reader-author-info__author-lockup--flex artdeco-entity-lockup__title ember-view">
+                                    <a href="/in/cristian-scarlat-6839a942/" id="ember1711"
+                                        class="ember-view align-items-center">
+                                        <h2 class="text-heading-medium">
+                                            Cristian Scarlat
+                                            <!---->
+                                        </h2>
+                                    </a>
+
+                                </div>
+                                <div id="ember1712" class="artdeco-entity-lockup__subtitle ember-view">
+                                    <div id="ember1714"
+                                        class="ember-view lt-line-clamp lt-line-clamp--multi-line text-body-small t-black--light break-words"
+                                        style="-webkit-line-clamp: 2">
+                                        Software developer
+
+                                        <!---->
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="display-flex ml8">
+                        <span tabindex="-1" id="ember1715"
+                            class="artdeco-hoverable-trigger artdeco-hoverable-trigger--content-placed-top artdeco-hoverable-trigger--is-hoverable ember-view">
+
+                            <button class="artdeco-button artdeco-button--secondary artdeco-button--muted
+        artdeco-button--1
+        artdeco-button--circle" aria-label="Open Immersive Reader" aria-describedby="artdeco-hoverable-artdeco-gen-73"
+                                type="button">
+                                <svg role="none" aria-hidden="true" class="artdeco-button__icon"
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    data-supported-dps="16x16" data-test-icon="book-open-small">
+                                    <!---->
+                                    <use href="#book-open-small" width="16" height="16"></use>
+                                </svg>
+
+                                <!----> </button>
+
+                            <div id="artdeco-gen-73" class="ember-view">
+                                <div id="ember1717" class="ember-view"></div>
+                            </div>
+                        </span>
+
+                        <span tabindex="-1" id="ember1718"
+                            class="artdeco-hoverable-trigger artdeco-hoverable-trigger--content-placed-top artdeco-hoverable-trigger--is-hoverable ember-view">
+                            <button aria-label="Save" aria-describedby="artdeco-hoverable-artdeco-gen-74" id="ember1719"
+                                class="artdeco-button artdeco-button--circle artdeco-button--muted artdeco-button--1 artdeco-button--secondary ember-view ml2">
+                                <svg role="none" aria-hidden="true" class="artdeco-button__icon "
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
+                                    data-supported-dps="16x16" data-test-icon="bookmark-outline-small">
+                                    <!---->
+                                    <use href="#bookmark-outline-small" width="16" height="16"></use>
+                                </svg>
+
+
+                                <span class="artdeco-button__text">
+
+                                </span></button>
+                            <div id="artdeco-gen-74" class="ember-view">
+                                <div id="ember1721" class="ember-view"></div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="mt4">
+                    <time class="text-body-small-open t-black--light">
+                        July 19, 2018
+                    </time>
+                </div>
+            </div>
+
+            <!---->
+
+            <!---->
+            <div data-scaffold-immersive-reader-content="">
+
+
+                <div>
+                    <div dir="ltr" class="reader-article-content reader-article-content--legacy-html">
+                        <p><strong>Kalman filtering</strong>, also known as&nbsp;<strong>linear quadratic
+                                estimation</strong>&nbsp;(<strong>LQE</strong>), is an&nbsp;<a
+                                href="https://en.wikipedia.org/wiki/Algorithm" target="_blank"
+                                rel="nofollow noopener">algorithm</a>&nbsp;that uses a series of measurements observed
+                            over time, containing&nbsp;<a href="https://en.wikipedia.org/wiki/Statistical_noise"
+                                target="_blank" rel="nofollow noopener">statistical noise</a>&nbsp;and other
+                            inaccuracies, and produces estimates of unknown variables that tend to be more accurate than
+                            those based on a single measurement alone, by estimating a&nbsp;<a
+                                href="https://en.wikipedia.org/wiki/Joint_probability_distribution" target="_blank"
+                                rel="nofollow noopener">joint probability distribution</a>&nbsp;over the variables for
+                            each timeframe. The filter is named after&nbsp;<a
+                                href="https://en.wikipedia.org/wiki/Rudolf_E._K%C3%A1lm%C3%A1n" target="_blank"
+                                rel="nofollow noopener">Rudolf E. Kálmán</a>, one of the primary developers of its
+                            theory.(<a href="https://en.wikipedia.org/wiki/Kalman_filter" target="_blank"
+                                rel="nofollow noopener">Kalman Filter Wikipedia</a>).</p>
+                        <p>In order to implement the Kalman algorithm I have to draw a little flowchart of the algorithm
+                            :</p>
+                        <div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
+                            <img data-media-urn=""
+                                data-li-src="https://media.licdn.com/dms/image/v2/C4E12AQH600tQ5gDTOA/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1532004634555?e=1735171200&amp;v=beta&amp;t=k3B0QlLCYcOqzeNYYALNZG5OAKZYuSCrruOtUxtbujQ"
+                                src="https://media.licdn.com/dms/image/v2/C4E12AQH600tQ5gDTOA/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1532004634555?e=1735171200&amp;v=beta&amp;t=k3B0QlLCYcOqzeNYYALNZG5OAKZYuSCrruOtUxtbujQ">
+                        </div>
+                        <p>The most 3 important steps in implementation of this algorithm are shown clearly in the
+                            picture above :</p>
+                        <p><em>1.Calculate Kalman Gain</em>,</p>
+                        <p><strong>KG = Eest/Eest + Emes </strong> where <strong>KG</strong> = Kalman Gain;
+                            <strong>Eest</strong> = error in estimate; <strong>Emes</strong> = error in measurement;</p>
+                        <p><em>2.Calculate current estimated state</em>,</p>
+                        <p><strong>ESTk = ESTk-1 + KG[MEA-ESTk-1] </strong>where<strong> ESTk</strong> = Current
+                            estimate; <strong>Estk-1</strong> = Previous estimate; <strong>MEA</strong> = Measured
+                            state;</p>
+                        <p><em>3.Calculate new error in estimate</em></p>
+                        <p><strong>Eest = EestK-1 - KG*EestK-1</strong> where <strong>Eest</strong> = error in estimate;
+                            <strong>EestK-1</strong> = previous error in estimate.</p>
+                        <p>For demonstrating the implementation of this algorithm I made a simple Express nodeJS backend
+                            and React javascript frontend project. The project can be downloaded from github <a
+                                href="https://github.com/CristiScarlat/KalmanFilter" target="_blank"
+                                rel="nofollow noopener">https://github.com/CristiScarlat/KalmanFilter</a>.</p>
+                        <p>You can recognize those 3 equations in the method which implements the algorithm:</p>
+                        <p>kalman = (data, kalmanParams) =&gt; {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;let R = kalmanParams.R;//expected noise</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;let Q = kalmanParams.Q;//measured noise</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;let A = kalmanParams.A;//state vector</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;let y = NaN;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;let Err = NaN;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;let filtered = data.map(x =&gt; {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;if (isNaN(y)) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = x;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Err = Q;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;} else {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Calculate previous state and previous error
+                            in estimate</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let prevX = A * y;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let prevErr = ((A * Err) * A) + R;</p>
+                        <p><br></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//calculate Kalman Gain</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let K = prevErr / (prevErr + Q);</p>
+                        <p><br></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Calculate new error in estimate</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Err = prevErr - (K * prevErr);</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Calculate current estimate</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = prevX + K * (x -
+                            prevX);&nbsp;&nbsp;&nbsp;</p>
+                        <p><br></p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//return filtered data&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return y;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;}});&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;return filtered;</p>
+                        <p>}</p>
+                        <p>The implemented algorithm receives 3 arguments R = kalmanParams.R = expected noise, Q =
+                            kalmanParams.Q = measured noise, A = kalmanParams.A = state vector and also the input that
+                            is an array of points that draw the raw signal.</p>
+                        <p>Raw signal is generated in backend. There are 3 types of generated signal :</p>
+                        <ol>
+                            <li><strong>Liniar </strong></li>
+                        </ol>
+                        <p>//sinusoidal function generator</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;100;i++){</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rawSignalSin.push(Math.sin(2
+                            * Math.PI * i/100 * 5));</p>
+                        <p>&nbsp;}</p>
+                        <p>2<strong>. Exponential</strong></p>
+                        <p>//exponential function generator</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;100;i++){</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rawSignalExp.push(Math.pow(0.8,
+                            i));</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                        <p>3.<strong>Low frequency Sinus Wave</strong></p>
+                        <p>//sinusoidal function generator</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(i=0;i&lt;100;i++){</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rawSignalSin.push(Math.sin(2
+                            * Math.PI * i/100 * 5));</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</p>
+                        <p>For the purpose of this experiment, noise data was generated using the Math.random() method
+                            and added to the raw data.</p>
+                        <p>//Add noise to exonential function</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let noisySignalExp =
+                            rawSignalExp.map(function(v) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return v +
+                            Math.random();</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Add noise to liniar function</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let noisySignalLin =
+                            rawSignalLin.map(function(v) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return v +
+                            Math.random();</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Add noise to sin function</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let noisySignalSin =
+                            rawSignalSin.map(function(v) {</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return v +
+                            Math.random();</p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</p>
+                        <div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
+                            <img data-media-urn=""
+                                data-li-src="https://media.licdn.com/dms/image/v2/C4E12AQEi35l7sOG3_g/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1532021860845?e=1735171200&amp;v=beta&amp;t=tKr9B0vSL1suLSl2LVqa5BraERE-dI_D6_okgDHxkuE"
+                                src="https://media.licdn.com/dms/image/v2/C4E12AQEi35l7sOG3_g/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1532021860845?e=1735171200&amp;v=beta&amp;t=tKr9B0vSL1suLSl2LVqa5BraERE-dI_D6_okgDHxkuE">
+                        </div>
+                        <p><br></p>
+                        <p>The kalman filter algorithm was applied on the noisy data and the result of Kalman filtering
+                            can be seen in the next picture , the waveform in red color is the exponential function
+                            filtered by Kalman algorithm.</p>
+                        <div class="slate-resizable-image-embed slate-image-embed__resize-full-width">
+                            <img data-media-urn=""
+                                data-li-src="https://media.licdn.com/dms/image/v2/C4E12AQEetz_pdwKjQg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1532011018470?e=1735171200&amp;v=beta&amp;t=9D56lNhRnuENFCaXyDYinzWGvMV5N8e1B4tqBFqWtnM"
+                                src="https://media.licdn.com/dms/image/v2/C4E12AQEetz_pdwKjQg/article-inline_image-shrink_1500_2232/article-inline_image-shrink_1500_2232/0/1532011018470?e=1735171200&amp;v=beta&amp;t=9D56lNhRnuENFCaXyDYinzWGvMV5N8e1B4tqBFqWtnM">
+                        </div>
+                        <p><br></p>
+
+
+                    </div>
+
+                    <!---->
+                    <iframe title="article content embedded iframe" id="reader-article-content__chartbeat-iframe"
+                        class="reader-article-content__chartbeat-iframe"></iframe>
+                </div>
+
+
+            </div>
+
+
+            <!---->
+        </div>
+    </article>
+
+</body>
+
+</html>
