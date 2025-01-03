@@ -1,5 +1,3 @@
-'use client'
-import { useState, useEffect } from "react";
 import type { NextPage } from "next";
 import {BsGithub, BsLinkedin} from "react-icons/bs";
 import CircularProgressBar from "../components/circularProgressBar/circularProgressBar";
@@ -21,22 +19,7 @@ import {
 } from "react-icons/si";
 
 const Home: NextPage = () => {
-  const [progress, setProgress] = useState<number[]>(new Array(14).fill(0));
-
-  useEffect(() => {
-    const max = [350, 240, 330, 350, 350, 350, 150, 180, 270, 250, 200, 300, 200, 220];
-    const tick = setInterval(() => {
-      setProgress((state: number[]) => {
-        const temp = [...state];
-        max.forEach((maxValue: number, index: number) => {
-          if(temp[index] < maxValue)temp[index]++;
-        })
-        return temp;
-      })
-    }, 5)
-
-    return () => clearInterval(tick);
-  }, [])
+  const progress = [350, 240, 330, 350, 350, 350, 150, 180, 270, 250, 200, 300, 200, 220];
 
   return (
       <div className="pb-5">
