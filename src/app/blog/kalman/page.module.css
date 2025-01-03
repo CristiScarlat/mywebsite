@@ -1,0 +1,22 @@
+.container {
+    max-width: 65rem;
+    margin: 4rem auto 5rem auto;
+    padding: 1rem;
+    background-color: #000000de;
+    border-radius: 10px;
+}
+
+.section p {
+    color: #daebb8;
+    font-family: system-ui,Ubuntu,Droid Sans,sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.section p a{
+    color: #6666ec;
+}
+
+.section pre {
+    white-space: break-spaces;
+}

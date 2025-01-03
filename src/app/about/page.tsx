@@ -1,4 +1,4 @@
-import styles from "../../../../mywebsite/styles/about.module.css";
+import styles from "./page.module.css";
 import {BsGithub, BsLinkedin} from "react-icons/bs";
 
 

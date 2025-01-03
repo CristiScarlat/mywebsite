@@ -1,4 +1,4 @@
-import styles from "../../../../mywebsite/styles/portfolio.module.css";
+import styles from "./page.module.css";
 import {
     SiTypescript,
     SiJavascript,

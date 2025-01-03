@@ -1,0 +1,51 @@
+.container {
+  max-width: 65rem;
+  margin: 4rem auto 5rem auto;
+  padding: 1rem;
+  background-color: #000000de;
+  border-radius: 10px;
+}
+
+.container>div{
+  justify-content: space-between;
+  align-items: center;
+  color: var(--bs-gray-400);
+}
+
+.photoWrapper {
+  border-radius: 50%;
+  width: 350px;
+  height: 350px;
+  margin: 0.5rem;
+  overflow: hidden;
+  box-shadow: 1px 1px 7px 2px #00000091;
+}
+
+.photo {
+  height: 15rem;
+  width: 15rem;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.container h3 {
+  color: var(--bs-gray-400);
+  font-weight: 800;
+}
+
+.section {
+  color: #daebb8;
+  font-family: system-ui,Ubuntu,Droid Sans,sans-serif;
+  font-weight: bold;
+}
+
+.articleTitles {
+  font-weight: 800;
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 800px){
+  .container>div{
+    justify-content: center;
+  }
+}

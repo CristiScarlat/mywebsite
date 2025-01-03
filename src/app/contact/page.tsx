@@ -1,6 +1,6 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
-import styles from "../../../../mywebsite/styles/contact.module.css";
+import styles from "./page.module.css";
 import {BsGithub, BsLinkedin} from "react-icons/bs";
 
 const Contact = () => {

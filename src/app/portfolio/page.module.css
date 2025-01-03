@@ -1,0 +1,32 @@
+.container {
+    max-width: 60rem;
+}
+
+.container a {
+    border: 1px inset #000000;
+    border-radius: 5px;
+    padding: 1rem;
+    background: linear-gradient(180deg, var(--main-dark-yellow), black);
+}
+
+.cardImg {
+    width: 250px;
+    border-radius: 5px;
+}
+
+.gradientBox {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, #8c3a3a, #0d0d0d);
+    border-radius: 15px;
+}
+
+.gradientBox p {
+    top: 10px;
+    left: 20%;
+    color: var(--main-yellow);
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-weight: 600;
+}
