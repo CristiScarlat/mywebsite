@@ -13,10 +13,17 @@
     text-align: justify;
 }
 
-.section p a{
+.container a{
     color: #6666ec;
 }
 
 .section pre {
     white-space: break-spaces;
+}
+
+.linkToApp {
+    background-color: #202020;
+    font-weight: bold;
+    text-align: center;
+    color: white;
 }

@@ -6,7 +6,9 @@ const KalmanArticle = () => {
         <article className={styles.container}>
             <div>
                 <img src="/blogArticles/kalman/images/kalman_at_work.jpeg" alt="..." className="w-100"/>
-                <h1 className="text-center text-white my-4">Implementing a simple one dimension Kalman Filter in NodeJS</h1>
+                <h1 className="text-center text-white my-4">Implementing a simple one dimension Kalman Filter in
+                    NodeJS</h1>
+                <p className={styles.linkToApp}>You can try my kalman filter implementation <a href="kalman/app">here</a>.</p>
             </div>
             <section className={styles.section}>
                 <p><strong>Kalman filtering</strong>, also known as&nbsp;<strong>linear quadratic
@@ -40,10 +42,7 @@ const KalmanArticle = () => {
                 <p><em>3.Calculate new error in estimate</em></p>
                 <p><strong>Eest = EestK-1 - KG*EestK-1</strong> where <strong>Eest</strong> = error in
                     estimate; <strong>EestK-1</strong> = previous error in estimate.</p>
-                <p>For demonstrating the implementation of this algorithm I made a simple Express nodeJS backend and
-                    React javascript frontend project. The project can be downloaded from github <a
-                        href="https://github.com/CristiScarlat/KalmanFilter" target="_blank"
-                        rel="nofollow noopener">https://github.com/CristiScarlat/KalmanFilter</a>.</p>
+
                 <code>
                         <pre>
                             {`

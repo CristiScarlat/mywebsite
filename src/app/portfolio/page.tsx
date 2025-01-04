@@ -18,8 +18,37 @@ import {
 
 const Portfolio = () => {
     return (
-        <div
-            className={`hero ${styles.container} m-auto my-5 p-3 d-flex justify-content-center align-items-stretch flex-wrap gap-3 `}>
+        <div className={`hero ${styles.container}`}>
+
+            <a href="https://mealswithdrinks.com" target="_blank"
+               className={styles.gradientBox}>
+                <div className="flex-fill">
+                    <img src="/images/home_drinks.jpg" className={styles.cardImg}/>
+                </div>
+                <div>
+                    <p>mealswithdrinks.com</p>
+                    <div className="d-flex justify-content-center gap-3 p-2">
+                        <SiTypescript size="1.5rem"/>
+                        <SiNextdotjs size="1.5rem"/>
+                        <SiTailwindcss size="1.5rem"/>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://wimapp.tech/" target="_blank" className={styles.gradientBox}>
+                <div className="flex-fill">
+                    <img src="/images/wimapp.png" className={styles.cardImg}/>
+                </div>
+                <div>
+                    <p>wimapp.com</p>
+                    <div className="d-flex justify-content-center gap-3 p-2">
+                        <SiTypescript size="1.5rem"/>
+                        <SiReact size="1.5rem"/>
+                        <SiBootstrap size="1.5rem"/>
+                    </div>
+                </div>
+            </a>
+
             <a href="https://clinica-dermatiq.ro" target="_blank" className={styles.gradientBox}>
                 <div className="flex-fill">
                     <img src="/images/dermatiq.png" className={styles.cardImg}/>
@@ -48,19 +77,7 @@ const Portfolio = () => {
                     </div>
                 </div>
             </a>
-            <a href="https://wimapp.tech/" target="_blank" className={styles.gradientBox}>
-                <div className="flex-fill">
-                    <img src="/images/wimapp.png" className={styles.cardImg}/>
-                </div>
-                <div>
-                    <p>wimapp.com</p>
-                    <div className="d-flex justify-content-center gap-3 p-2">
-                        <SiTypescript size="1.5rem"/>
-                        <SiReact size="1.5rem"/>
-                        <SiBootstrap size="1.5rem"/>
-                    </div>
-                </div>
-            </a>
+
             <a href="https://galeriadincurte.ro" target="_blank" className={styles.gradientBox}>
                 <div className="flex-fill">
                     <img src="/images/art.png" className={styles.cardImg}/>
@@ -74,6 +91,7 @@ const Portfolio = () => {
                     </div>
                 </div>
             </a>
+
             <a href="https://oanabologbleich.com" target="_blank" className={styles.gradientBox}>
                 <div className="flex-fill">
                     <img src="/images/oanabologbleigh.jpg" className={`${styles.cardImg} rounded-circle`}
@@ -88,6 +106,7 @@ const Portfolio = () => {
                     </div>
                 </div>
             </a>
+
             <a href="https://tucubleich.com" target="_blank" className={styles.gradientBox}>
                 <div className="flex-fill">
                     <img src="/images/tucu_poza_buna_crop.jpeg" className={`${styles.cardImg} rounded-circle`}
@@ -102,7 +121,9 @@ const Portfolio = () => {
                     </div>
                 </div>
             </a>
-            <a href="https://cristiscarlat.github.io/vite-vanilla-puzzle-game/" target="_blank" className={styles.gradientBox}>
+
+            <a href="https://cristiscarlat.github.io/vite-vanilla-puzzle-game/" target="_blank"
+               className={styles.gradientBox}>
                 <div className="flex-fill">
                     <img src="/images/puzzle.jpg" className={styles.cardImg}/>
                 </div>

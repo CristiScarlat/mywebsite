@@ -1,0 +1,9 @@
+.post {
+    max-width: 50rem;
+    border: 1px solid var(--main-yellow);
+    border-radius: 5PX;
+    background: black;
+    padding: 1rem;
+    margin: auto;
+    cursor: pointer;
+}

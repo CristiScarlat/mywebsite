@@ -1,12 +1,18 @@
 .container {
     max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 280px);
+    grid-gap: 1rem;
+    justify-content: center;
+    margin: 1rem auto 5rem auto;
+    padding: 1rem;
 }
 
 .container a {
-    border: 1px inset #000000;
     border-radius: 5px;
     padding: 1rem;
-    background: linear-gradient(180deg, var(--main-dark-yellow), black);
+    background: linear-gradient(180deg,  #015215, black);
+    max-width: 280px;
 }
 
 .cardImg {
