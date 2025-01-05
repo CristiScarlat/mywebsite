@@ -1,6 +1,8 @@
 :root {
   --main-yellow: #ffb400;
   --main-dark-yellow: #a77905;
+  --main-green: #1b681b;
+  --main-green-lite: #2a9a2a;
   --smokey-dark: #000000de;
   --main-bg-dark: #111111;
 }
@@ -31,7 +33,7 @@ a {
 }
 
 .oblique-yellow-background {
-  background-color: var(--main-yellow);
+  background-color: var(--main-green);
   position: fixed;
   top: -80px;
   bottom: 0;
@@ -41,7 +43,7 @@ a {
 }
 
 .hero {
-  color: var(--main-yellow);
+  color: var(--main-green-lite);
   background-color: var(--smokey-dark);
   border-radius: 10px;
 }
@@ -61,21 +63,30 @@ a {
 }
 
 .nav-link.current{
-  background-color: var(--main-yellow);
+  background-color: var(--main-green);
   color: white!important;
 }
 
 .nav-link:hover{
   width: 8rem;
   color: white;
-  background-color: var(--main-yellow);
+  background-color: var(--main-green);
+}
+
+.nav-link[data-set="about"] {
+  max-width: 56px;
+}
+
+.nav-link[data-set="about"]:hover {
+  width: 56px;
+  background-color: var(--main-green-lite);
 }
 
 .home-nav-link-mobile {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  color: var(--main-yellow);
+  color: var(--main-green);
   background-color: var(--main-bg-dark);
   padding: 1rem 0;
   position: fixed;

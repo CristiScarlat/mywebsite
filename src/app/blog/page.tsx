@@ -11,16 +11,20 @@ const Blog = () => {
         }
     ]
     return(
+        <>
+        <h4 className="text-center text-secondary my-4">Thoughts and Ideas</h4>
         <div className="mt-5 p-3">
             {posts.map(post => (
                 <div key={post.title} className={styles.post}>
                     <Link href={post.link} >
-                        <h3 className="text-white">{post.title}</h3>
+                        <h3>{post.title}</h3>
                         <p  className="text-white-50">{post.date}</p>
                     </Link>
                 </div>
             ))}
+            <p className="text-center text-secondary my-4">More to come in the near future</p>
         </div>
+        </>
     )
 }
 

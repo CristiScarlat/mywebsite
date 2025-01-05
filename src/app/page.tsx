@@ -24,14 +24,14 @@ const Home: NextPage = () => {
   return (
       <div className="pb-5">
         <section className="mt-5">
-          <div className="d-flex flex-wrap justify-content-center align-items-center flex-column flex-md-row">
+          <div className="d-flex flex-wrap justify-content-center align-items-center flex-column flex-md-row gap-3">
             <div>
               <img src="images/me.jpg" alt="me"  style={{width: 270, height: 270, objectFit: "cover", borderRadius: '100%'}}/>
             </div>
-            <div className="ms-3 mt-2 p-3 hero">
+            <div className="mt-2 p-3 hero">
               <h1 className="text-center" style={{letterSpacing: 2}}>Cristian Scarlat</h1>
               <h3 className="text-center" style={{letterSpacing: 2}}>Software developer </h3>
-              {/*<h4 className="text-secondary">Timişoara, Timiş, Romania</h4>*/}
+              <h5 className="text-secondary text-sm-center">Timişoara, Timiş, Romania</h5>
               <div className="my-3 text-center">
                 <a
                     href="https://github.com/CristiScarlat"
@@ -40,7 +40,7 @@ const Home: NextPage = () => {
                 >
                   <BsGithub
                       size="1.5rem"
-                      className="me-3"
+                      className="me-5"
                   />
                 </a>
                 <a
@@ -55,47 +55,47 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className="d-flex justify-content-center align-items-center gap-3 flex-wrap hero mx-3 mx-sm-auto mt-2 mb-5 p-3" style={{maxWidth: "40rem"}}>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[0]}>
-            <SiJavascript color='#ffb400' size='1.6rem' title="Javascript"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[0]}>
+            <SiJavascript color='#2a9a2a' size='1.6rem' title="Javascript"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[1]}>
-            <SiTypescript color='#ffb400' size='1.6rem' title="Typescript"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[1]}>
+            <SiTypescript color='#2a9a2a' size='1.6rem' title="Typescript"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[2]}>
-            <SiNextdotjs color='#ffb400' size='1.6rem' title="Next"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[2]}>
+            <SiNextdotjs color='#2a9a2a' size='1.6rem' title="Next"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[3]}>
-            <SiReact color='#ffb400' size='1.6rem' title="React"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[3]}>
+            <SiReact color='#2a9a2a' size='1.6rem' title="React"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[4]}>
-            <SiBootstrap color='#ffb400' size='1.6rem' title="Bootstrap"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[4]}>
+            <SiBootstrap color='#2a9a2a' size='1.6rem' title="Bootstrap"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[5]}>
-            <SiTailwindcss color='#ffb400' size='1.6rem' title="Tailwind"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[5]}>
+            <SiTailwindcss color='#2a9a2a' size='1.6rem' title="Tailwind"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[6]}>
-            <SiVite color='#ffb400' size='1.6rem' title="Vite"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[6]}>
+            <SiVite color='#2a9a2a' size='1.6rem' title="Vite"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[7]}>
-            <SiWebpack color='#ffb400' size='1.6rem' title="Webpack"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[7]}>
+            <SiWebpack color='#2a9a2a' size='1.6rem' title="Webpack"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[8]}>
-            <SiElectron color='#ffb400' size='1.6rem' title="Electron"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[8]}>
+            <SiElectron color='#2a9a2a' size='1.6rem' title="Electron"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[9]}>
-            <SiExpress color='#ffb400' size='1.6rem' title="Express"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[9]}>
+            <SiExpress color='#2a9a2a' size='1.6rem' title="Express"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[10]}>
-            <SiPostgresql color='#ffb400' size='1.6rem' title="Postgresql"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[10]}>
+            <SiPostgresql color='#2a9a2a' size='1.6rem' title="Postgresql"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[11]}>
-            <SiFirebase color='#ffb400' size='1.6rem' title="Firebase"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[11]}>
+            <SiFirebase color='#2a9a2a' size='1.6rem' title="Firebase"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[12]}>
-            <SiPython color='#ffb400' size='1.6rem' title="Python"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[12]}>
+            <SiPython color='#2a9a2a' size='1.6rem' title="Python"/>
           </CircularProgressBar>
-          <CircularProgressBar radius={48} progressColor={'#ffb400'} bgColor={'black'} width={25} progress={progress[13]}>
-            <SiDjango color='#ffb400' size='1.6rem' title="Django"/>
+          <CircularProgressBar radius={48} progressColor={'#2a9a2a'} bgColor={'black'} width={25} progress={progress[13]}>
+            <SiDjango color='#2a9a2a' size='1.6rem' title="Django"/>
           </CircularProgressBar>
         </section>
       </div>

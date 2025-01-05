@@ -18,8 +18,9 @@ import {
 
 const Portfolio = () => {
     return (
+        <>
+        <h4 className="text-center text-secondary my-4">Portfolio</h4>
         <div className={`hero ${styles.container}`}>
-
             <a href="https://mealswithdrinks.com" target="_blank"
                className={styles.gradientBox}>
                 <div className="flex-fill">
@@ -136,6 +137,7 @@ const Portfolio = () => {
                 </div>
             </a>
         </div>
+        </>
     )
 }
 

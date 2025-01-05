@@ -1,41 +1,49 @@
 import styles from "./page.module.css";
-import {BsGithub, BsLinkedin} from "react-icons/bs";
+import {BsGithub, BsLinkedin, BsDownload} from "react-icons/bs";
+import DownloadBtn from "../../components/downloadBtn/downloadBtn";
 
 
 const About = () => {
+
         return(
             <div className={styles.container}>
                 <div className="d-flex flex-wrap text-center">
                     <img src="images/me.jpg" alt="me" className={styles.photo} />
-                    <div className="ms-3 mt-2">
+                    <div className={styles.headerTitle}>
                         <h1>Cristian Scarlat</h1>
                         <h2>Software developer </h2>
-                        <h4 className="text-secondary">Timişoara, Timiş, Romania</h4>
-                        <div>
+                        <h4>Timişoara, Timiş, Romania</h4>
+                        <div className="d-flex justify-content-center gap-3 my-3">
                             <a
                                 href="https://github.com/CristiScarlat"
                                 target="_blank"
                                 rel="noreferrer"
+                                data-set="about"
+                                className="nav-link current"
                             >
                                 <BsGithub
                                     style={{ height: "1.5rem", width: "1.5rem" }}
                                     className="me-3"
+                                    color="white"
                                 />
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/cristian-scarlat-6839a942"
                                 target="_blank"
                                 rel="noreferrer"
+                                data-set="about"
+                                className="nav-link current"
                             >
-                                <BsLinkedin style={{ height: "1.5rem", width: "1.5rem" }} />
+                                <BsLinkedin style={{ height: "1.5rem", width: "1.5rem" }} color="white"/>
                             </a>
                         </div>
+                        <DownloadBtn />
                     </div>
                 </div>
                 <hr />
                 <section className={styles.section}>
                     <article>
-                        <h3 id="summary">Summary</h3>
+                        <h3 id="summary" className={styles.sectionsTitles}>Summary</h3>
                         <p>
                             I am a passionate and versatile software developer with a strong foundation in both front-end development and embedded systems programming. With over three years of experience programming AVR microcontrollers in C and a subsequent transition to web development, I bring a unique perspective that combines low-level hardware knowledge with modern web technologies.
                         </p>
@@ -53,13 +61,13 @@ const About = () => {
                             <h4 className={styles.articleTitles}>Vatis Tech</h4>
                             <h5>Javascript and React JS developer</h5>
                             <h5 className="text-secondary">
-                                June 2022 - Present
+                                June 2022 - June 2024
                             </h5>
                         </div>
-                        <p>
-                            Developing ui using React JS in a close communication with business
-                            owners and ui/ux designers. Helping with small tasks in backend, using nodeJS.
-                        </p>
+                        <p>Developed and implemented a robust text editor using <span className={styles.highlights}>Next.js</span>, featuring real-time synchronization of video and audio with editable text, enabling seamless subtitle creation and editing.</p>
+                        <p>Leveraged the <span className={styles.highlights}>content-editable</span> attribute to deliver a user-friendly and interactive editing experience, ensuring high performance and accuracy in multimedia synchronization.</p>
+                        <p>Collaborated closely with cross-functional teams to ensure project alignment with client requirements and deadlines, maintaining code quality and scalability.</p>
+                        <p>Enhanced the user interface for intuitive navigation and accessibility, contributing to improved user satisfaction and engagement metrics.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -69,11 +77,11 @@ const About = () => {
                                 June 2021 - Present
                             </h5>
                         </div>
-                        <p>
-                            My job is to teach Javascript and ReactJS in a live coding training,
-                            to lead students in building there own projects, debug together with
-                            them and to help them build there own portfolio.
-                        </p>
+                        <p>Delivered comprehensive training programs on <span className={styles.highlights}>JavaScript</span> and <span className={styles.highlights}>React.js</span>, tailored to students at varying skill levels, fostering a strong understanding of modern web development practices.</p>
+                        <p>Conducted interactive live coding workshops to demonstrate real-world problem-solving techniques and best practices, promoting hands-on learning and active student participation.</p>
+                        <p>Designed and implemented engaging course materials, including tutorials, coding exercises, and project assignments, to enhance learning outcomes.</p>
+                        <p>Provided personalized mentorship and feedback, helping students build practical skills and successfully complete portfolio projects.</p>
+                        <p>Kept curriculum up-to-date with the latest industry trends and technologies, ensuring students were prepared for real-world development challenges.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -81,11 +89,11 @@ const About = () => {
                             <h5>NodeJS, ReactJS developer</h5>
                             <h5 className="text-secondary">July 2021 - June 2022</h5>
                         </div>
-                        <p>
-                            Developing ui using React JS in a close communication with business
-                            owners and ui/ux designers.Helping with small tasks in backend, in
-                            an aws infrastructure.
-                        </p>
+                        <p>Develop a dynamic form application capable of generating forms in real-time based on data received from the backend.</p>
+                        <p>Implemented responsive and modular components, ensuring seamless integration with backend APIs and a smooth user experience across devices.</p>
+                        <p>Optimized application performance by adhering to best practices in modern frontend development, including efficient state management and component-based architecture.</p>
+                        <p>Participated in code reviews and agile development practices, contributing to the delivery of high-quality, maintainable code within tight deadlines.</p>
+                        <p>Worked closely with backend developers and UX designers to align functionality and design, ensuring the application met business and user requirements.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -95,10 +103,10 @@ const About = () => {
                                 April 2020 - June 2021
                             </h5>
                         </div>
-                        <p>
-                            Developing React apps for internal APIs, in close communication with
-                            the design team.
-                        </p>
+                        <p>Contributed to the development of user interfaces designed to train AI engines, incorporating advanced tools for annotating images and GIFs.</p>
+                        <p>Engineered interactive drawing functionalities to enable precise area selection and annotation, providing pixel-perfect measurements critical for AI training datasets.</p>
+                        <p>Collaborated with data scientists and backend teams to ensure seamless data flow and integration with AI training pipelines.</p>
+                        <p>Focused on creating intuitive and responsive interfaces, enhancing usability for end-users while maintaining high performance and reliability.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -108,17 +116,13 @@ const About = () => {
                                 October 2018 - April 2020
                             </h5>
                         </div>
-                        <p>
-                            Collaborate with back-end developers and web designers to improve
-                            usability, write functional requirement documents and guides and
-                            create quality mockups and prototypes. Help back-end developers with
-                            coding, troubleshooting and API definitions, ensure high quality
-                            graphic standards and brand consistency. Overseeing the activities
-                            of the less experienced team members or other colleagues and work
-                            closely with the software engineering team, Product Management and
-                            Technical Operations as well as business users and Senior
-                            Management, as required.
-                        </p>
+                        <p>Collaborated with back-end developers and web designers to enhance usability, ensuring seamless integration of front-end and back-end systems.</p>
+                        <p>Authored functional requirement documents and guides, and created quality mockups and prototypes to facilitate the development process.</p>
+                        <p>Supported back-end developers with coding, troubleshooting, and API definitions, fostering efficient cross-functional collaboration.</p>
+                        <p>Ensured high-quality graphic standards and brand consistency across all user interfaces, contributing to a polished and cohesive user experience.</p>
+                        <p>Supervised and mentored less experienced team members, fostering knowledge sharing and skill development within the team.</p>
+                        <p>Partnered with the software engineering team, Product Management, and Technical Operations to align technical implementation with business objectives.</p>
+                        <p>Engaged with senior management and business users as needed to gather requirements, provide updates, and ensure project success.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -128,16 +132,13 @@ const About = () => {
                                 June 2017 - October 2018
                             </h5>
                         </div>
-                        <p>
-                            Developing frontend apps using React.JS and Redux for state
-                            management, in close communication with the design team. Participate
-                            in the entire application lifecycle, focusing on coding and
-                            debugging Write clean code to develop functional web applications
-                            Troubleshoot and debug applications Manage cutting-edge technologies
-                            to improve legacy applications Build reusable code and libraries for
-                            future use Liaise with developers, designers and system
-                            administrators to identify new features Follow emerging technologies
-                        </p>
+                        <p>Developed responsive and dynamic front-end applications using React.js and Redux for efficient state management, ensuring high performance and scalability.</p>
+                        <p>Collaborated closely with the design team to translate UI/UX designs into functional and visually appealing web interfaces.</p>
+                        <p>Participated in the entire application lifecycle, with a strong focus on coding, debugging, and continuous improvement.</p>
+                        <p>Wrote clean, modular, and maintainable code to deliver functional and high-quality web applications.</p>
+                        <p>Troubleshot and debugged applications, resolving issues promptly to minimize downtime and improve user experience.</p>
+                        <p>Modernized legacy applications by integrating cutting-edge technologies, enhancing performance, and extending functionality.</p>
+                        <p>Built reusable code and component libraries, streamlining development processes and promoting scalability for future projects.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -147,7 +148,7 @@ const About = () => {
                                 December 2016 - June 2017
                             </h5>
                         </div>
-                        <p>Same job as He-Solutions.</p>
+                        <p>HE-Solution was renamed to META Engineering Solutions.</p>
                     </article>
                     <article className="mt-5">
                         <div>
@@ -157,74 +158,15 @@ const About = () => {
                                 June 2014 - November 2016
                             </h5>
                         </div>
-                        <p>
-                            The main job here was to develop full custom projects, beginning
-                            with hardware development, pcb layout and small programs using ANSI
-                            C for ATmega microcontrollers from ATMEL, using communications
-                            specific like I2C, SPI, UART . This was the perfect opportunity to
-                            develop my skills as a programmer and also, it was a good
-                            opportunity to write code for low level layer, working with hardware
-                            timers, interrupts and memory management directly. Also, most of the
-                            job required hardware knowledge, schematic and pcb read and
-                            understand or design/ modify.
+                        <p>Led the development of full custom projects, from hardware design to programming, with a focus on <span className={styles.highlights}>ATmega microcontrollers (ATMEL)</span> using <span className={styles.highlights}>ANSI C</span>.
                         </p>
-                    </article>
-                    <article className="mt-5">
-                        <div>
-                            <h4 className={styles.articleTitles}>HELLA</h4>
-                            <h5>Automation Technician</h5>
-                            <h5 className="text-secondary">
-                                September 2013 - June 2014
-                            </h5>
-                        </div>
-                        <p>
-                            This was a short period of 6 month when I worked as automation
-                            specialist for Hella Timisoara. My job was to develop small SIEMENS
-                            TIA PORTAL S7 PLC programmes and Siemens Logo automation systems for
-                            different sections of production line.
+                        <p>Designed and laid out <span className={styles.highlights}>PCBs</span>, and programmed low-level firmware to interface with hardware components via communication protocols such as <span className={styles.highlights}>I2C</span>, <span className={styles.highlights}>SPI</span>, and <span className={styles.highlights}>UART</span>.
                         </p>
-                    </article>
-                    <article className="mt-5">
-                        <div>
-                            <h4 className={styles.articleTitles}>Fuji Machine Mfg. (Europe) GmbH</h4>
-                            <h5>Automation Technician</h5>
-                            <h5 className="text-secondary">
-                                January 2005 - September 2013
-                            </h5>
-                        </div>
-                        <p>
-                            Fuji Machine Mfg. (Europe) GmbH is one of the powerful industrial
-                            SMT robots manufacturer in the world. I was hired in this company in
-                            2005 and worked for it for 8 years. My job as a service engineer was
-                            to maintain a 24 h hotline technical customer support, service and
-                            maintenance. Support FujiTrax and FujiFlexa software, NXT 2 , SMT
-                            industrial Robot. Working for this company for a period of 8 years
-                            was a great opportunity to learn and understand the field of
-                            industrial robotics. I learn PLC programming, electro-mechanical
-                            systems, pneumatic systems and electronics. Also, during these 8
-                            years , I started working with Microchip 8bit microcontrollers,
-                            programming different embedded designs using ASM and ANSI C
-                            languages. At the end of this period I was familiar with the
-                            industrial automation and programming of the microcontrollers and
-                            started to be very interested in FIRMWARE design.
-                        </p>
-                    </article>
-                    <article className="mt-5">
-                        <div>
-                            <h4 className={styles.articleTitles}>Comandor.srl</h4>
-                            <h5>Electronic Technician</h5>
-                            <h5 className="text-secondary">
-                                November 1997 - January 2005
-                            </h5>
-                        </div>
-                        <p>
-                            This was my first job, I started working in this company in 1997 as
-                            an electronic technician. My job was to repair the electronic
-                            equipment, in the field. The company is a well known Romanian brand
-                            selling security and automation systems. As a field service
-                            technician I had the opportunity to learn how to debug the hardware
-                            and repair, in the field.
-                        </p>
+                        <p>Gained in-depth experience in low-level programming, working directly with hardware timers, interrupts, and memory management for optimized system performance.</p>
+                        <p>Designed, modified, and interpreted schematics and PCBs, ensuring accurate understanding of hardware requirements and seamless integration with software solutions.</p>
+                        <p>Collaborated with cross-functional teams to define and implement solutions that aligned with project specifications and business needs.</p>
+                        <p>Developed <span className={styles.highlights}>Python-based UIs</span> and testing tools to streamline the debugging and testing processes, improving workflow efficiency.</p>
+                        <p>Focused on continuous learning and skill development, enhancing both hardware and software expertise in embedded systems.</p>
                     </article>
                     <hr />
                     <h3 id="education">Education</h3>
@@ -232,7 +174,7 @@ const About = () => {
                         <div>
                             <h4>Universitatea din Oradea</h4>
                             <h5>{`Engineer's degree, IT software`}</h5>
-                            <a href="https://ieti.uoradea.ro/ro/" target="_blank" rel="noreferrer">
+                            <a href="https://ieti.uoradea.ro/ro/" target="_blank" rel="noreferrer" className="text-secondary">
                                 https://ieti.uoradea.ro/ro/
                             </a>
                         </div>
