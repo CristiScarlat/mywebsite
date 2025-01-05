@@ -212,7 +212,6 @@ const KalmanApp = () =>  {
     }
 
     const plotData = () => {
-        console.log("plot ->", functionType, data)
         let temp = dataToPlot;
         switch (functionType) {
             case LINIAR:
@@ -263,7 +262,6 @@ const KalmanApp = () =>  {
             }
         })
             .then(response => {
-                console.log(response);
                 getRawNoisyFilteredData();
             })
     }
@@ -274,7 +272,7 @@ const KalmanApp = () =>  {
     }
 
     const handleFunctionDisplay = (e) => {
-        console.log(e.target.id);
+
         switch (e.target.id) {
             case RAW:
                 setRaw(!raw)
@@ -289,7 +287,6 @@ const KalmanApp = () =>  {
         getRawNoisyFilteredData();
     }
 
-        console.log(dataToPlot);
         return (
             <div style={{maxWidth: '60rem'}} className="m-auto">
                 <div className={styles["app-wrapper"]}>
