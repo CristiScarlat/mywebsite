@@ -4,24 +4,10 @@ import styles from "./page.module.css";
 import {
     Chart as ChartJS,
     CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
+    registerables
 } from 'chart.js';
 import {Line} from 'react-chartjs-2';
 
-ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend
-);
 
 const LINIAR = "lin";
 const EXPONENTIAL = "expo";
@@ -31,7 +17,7 @@ const NOISY = "noisy";
 const FILTERED = "filtered";
 const kalmanParams = {R: 0.01, Q: 10, A: 0.9};
 
-const KalmanApp = () =>  {
+const KalmanApp = () => {
 
     const [rawSignalExp, setRawSignalExp] = React.useState({});
     const [noisySignalExp, setNoisySignalExp] = React.useState({});
@@ -106,19 +92,21 @@ const KalmanApp = () =>  {
     const [data, setData] = React.useState({});
     const [auto, setAuto] = React.useState(false);
     const [functionType, setFunctionType] = React.useState(LINIAR);
-    const [kalmanParams, setKalmanParams] = React.useState({R: 0.01, Q: 10, A: 1, B: 1});
+    const [kalmanParams, setKalmanParams] = React.useState({R: 0.01, Q: 10, A: 0.9});
     const [raw, setRaw] = React.useState(true);
     const [noisy, setNoisy] = React.useState(false);
     const [filtered, setFiltered] = React.useState(false);
 
-    useEffect(() => {
+    ChartJS.register(...registerables);
 
+    useEffect(() => {
         getRawNoisyFilteredData();
     }, []);
 
     useEffect(() => {
         plotData()
-    }, [data])
+    }, [data, functionType])
+
 
     useEffect(() => {
         let refreshTick = null;
@@ -162,32 +150,32 @@ const KalmanApp = () =>  {
 
 
     const getRawNoisyFilteredData = () => {
-        let rawSignalExp = [];
-        let rawSignalLin = [];
-        let rawSignalSin = [];
+        let signalExp = [];
+        let signalLin = [];
+        let signalSin = [];
 
         //exponential function generator
         for (let i = 0; i < 100; i++) {
-            rawSignalExp.push(Math.pow(0.8, i));
+            signalExp.push(Math.pow(0.8, i));
         }
         //sinusoidal function generator
         for (let i = 0; i < 100; i++) {
-            rawSignalSin.push(Math.sin(2 * Math.PI * i / 100 * 5));
+            signalSin.push(Math.sin(2 * Math.PI * i / 100 * 5));
         }
         //liniar function generator
         for (let i = 0; i < 100; i++) {
-            rawSignalLin.push(i / 100);
+            signalLin.push(i / 100);
         }
         //Add noise to exonential function
-        let noisySignalExp = rawSignalExp.map(function (v) {
+        let noisySignalExp = signalExp.map(function (v) {
             return v + Math.random();
         });
         //Add noise to liniar function
-        let noisySignalLin = rawSignalLin.map(function (v) {
+        let noisySignalLin = signalLin.map(function (v) {
             return v + Math.random();
         });
         //Add noise to sin function
-        let noisySignalSin = rawSignalSin.map(function (v) {
+        let noisySignalSin = signalSin.map(function (v) {
             return v + Math.random();
         });
 
@@ -199,20 +187,21 @@ const KalmanApp = () =>  {
         let filteredSignalSin = kalman(noisySignalSin, kalmanParams);
 
         setData({
-                rawLin: rawSignalLin,
-                noisyLin: noisySignalLin,
-                filteredLin: filteredSignalLin,
-                rawExp: rawSignalExp,
-                noisyExp: noisySignalExp,
-                filteredExp: filteredSignalExp,
-                rawSin: rawSignalSin,
-                noisySin: noisySignalSin,
-                filteredSin: filteredSignalSin
+            rawLin: signalLin,
+            noisyLin: noisySignalLin,
+            filteredLin: filteredSignalLin,
+            rawExp: signalExp,
+            noisyExp: noisySignalExp,
+            filteredExp: filteredSignalExp,
+            rawSin: signalSin,
+            noisySin: noisySignalSin,
+            filteredSin: filteredSignalSin
         })
     }
 
     const plotData = () => {
-        let temp = dataToPlot;
+        let temp = {labels: [], datasets: [...dataToPlot.datasets]};
+        console.log(functionType, "plot data");
         switch (functionType) {
             case LINIAR:
                 temp.datasets[0].data = raw ? data.rawLin : [];
@@ -248,31 +237,21 @@ const KalmanApp = () =>  {
     const handleFilterParameters = (e) => {
         let parameterName = e.target.id;
         let parameterValue = e.target.value;
-        let temp = kalmanParams;
+        let temp = {...kalmanParams};
         temp[parameterName] = Number(parameterValue)
         setKalmanParams(temp)
     }
 
     const handleSubmitParams = () => {
-        fetch('/kalman', {
-            method: 'post',
-            body: JSON.stringify(kalmanParams),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-            .then(response => {
-                getRawNoisyFilteredData();
-            })
+        getRawNoisyFilteredData();
     }
 
     const handleFunctionSelector = (e) => {
         setFunctionType(e.target.id);
-        getRawNoisyFilteredData();
     }
 
     const handleFunctionDisplay = (e) => {
-
+        console.log(e.target.id);
         switch (e.target.id) {
             case RAW:
                 setRaw(!raw)
@@ -287,105 +266,98 @@ const KalmanApp = () =>  {
         getRawNoisyFilteredData();
     }
 
-        return (
-            <div style={{maxWidth: '60rem'}} className="m-auto">
-                <div className={styles["app-wrapper"]}>
-                    <div className={styles.header}>
-                        Kalman filter at work !!
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top',
+            },
+            title: {
+                display: false,
+                text: '5 days temperature forecast',
+            },
+            grid: {
+                color: "white"
+            }
+        },
+    };
+
+    console.log(dataToPlot.datasets[0].data)
+
+    return (
+        <div style={{maxWidth: '60rem'}} className="m-auto">
+            <div className={styles["app-wrapper"]}>
+                <div className={styles.header}>
+                    Kalman filter at work !!
+                </div>
+                <div className={styles["body-wrapper"]}>
+                    <div className={styles.ploter}>
+                        <Line datatype="array" data={dataToPlot} height={200} options={options}/>
                     </div>
-                    <div className={styles["body-wrapper"]}>
-                        <div className={styles.ploter}>
-                            <Line data={dataToPlot} height={200} options={
-                                {
-                                    responsive: true,
-                                    plugins: {
-                                        legend: {
-                                            position: 'top',
-                                        },
-                                        title: {
-                                            display: true,
-                                            text: 'Chart.js Line Chart',
-                                        },
-                                    },
-                                }}/>
-                        </div>
-                        <div className={styles.controls}>
-                            <div className={styles.devider}/>
-                            <div className="parameters">Filter parameters</div>
-                            <div className={styles.subdevider}/>
-                            <div className="slidecontainer">
-                                <label htmlFor="R">R(InterSystem Noise) = {kalmanParams.R}</label>
-                                <input type="range" min="0" max="1" step="0.01" value={kalmanParams.R}
-                                       className={styles.slider} id="R" onChange={handleFilterParameters}/>
-                                <label htmlFor="Q">Q(Measured Noise) = {kalmanParams.Q}</label>
-                                <input type="range" min="0" max="100" step="0.1" value={kalmanParams.Q}
-                                       className={styles.slider} id="Q" onChange={handleFilterParameters}/>
-                                <label htmlFor="A">A(State Vector) = {kalmanParams.A}</label>
-                                <input type="range" min="0" max="1" step="0.01" value={kalmanParams.A}
-                                       className={styles.slider} id="A" onChange={handleFilterParameters}/>
-                                {/* <label htmlFor="B">B = {kalmanParams.B}</label>
+                    <div className={styles.controls}>
+                        <div className={styles.devider}/>
+                        <div className="parameters">Filter parameters</div>
+                        <div className={styles.subdevider}/>
+                        <div className="slidecontainer">
+                            <label htmlFor="R">R(InterSystem Noise) = {kalmanParams.R}</label>
+                            <input type="range" min="0" max="1" step="0.01" value={kalmanParams.R}
+                                   className={styles.slider} id="R" onChange={handleFilterParameters}/>
+                            <label htmlFor="Q">Q(Measured Noise) = {kalmanParams.Q}</label>
+                            <input type="range" min="0" max="100" step="0.1" value={kalmanParams.Q}
+                                   className={styles.slider} id="Q" onChange={handleFilterParameters}/>
+                            <label htmlFor="A">A(State Vector) = {kalmanParams.A}</label>
+                            <input type="range" min="0" max="1" step="0.01" value={kalmanParams.A}
+                                   className={styles.slider} id="A" onChange={handleFilterParameters}/>
+                            {/* <label htmlFor="B">B = {kalmanParams.B}</label>
 						<input type="range" min="0" max="100" step="0.01" value={kalmanParams.B} className={styles.slider} id="B" onChange={handleFilterParameters}/> */}
-                            </div>
-                            <div>
-                                <button className={styles.button} onClick={handleSubmitParams}>Submit Parameters
-                                </button>
-                            </div>
-                            <div className={styles.devider}/>
-                            <div className="parameters">Function generator</div>
-                            <div className={styles.subdevider}/>
-                            <div className={styles["function-selector"]}>
-                                <div>
-                                    <button className={styles.button} onClick={(e) => {
-                                        handleFunctionSelector(e)
-                                    }} id='lin'>Liniar
-                                    </button>
-                                </div>
-                                <div>
-                                    <button className={styles.button} onClick={(e) => {
-                                        handleFunctionSelector(e)
-                                    }} id='expo'>Exponential
-                                    </button>
-                                </div>
-                                <div>
-                                    <button className={styles.button} onClick={(e) => {
-                                        handleFunctionSelector(e)
-                                    }} id='sin'>Sinus
-                                    </button>
-                                </div>
-                            </div>
-                            <div className={styles.devider}/>
-                            <div className="parameters">Select to display</div>
-                            <div className={styles.subdevider}/>
-                            <div className="function-selector">
-                                <div>
-                                    <button className={styles.button} onClick={(e) => {
-                                        handleFunctionDisplay(e)
-                                    }} id='raw'>Raw
-                                    </button>
-                                </div>
-                                <div>
-                                    <button className={styles.button} onClick={(e) => {
-                                        handleFunctionDisplay(e)
-                                    }} id='noisy'>Noisy
-                                    </button>
-                                </div>
-                                <div>
-                                    <button className={styles.button} onClick={(e) => {
-                                        handleFunctionDisplay(e)
-                                    }} id='filtered'>Filtered
-                                    </button>
-                                </div>
-                                <div>
-                                    <button className={styles.button} onClick={handleAutoRefresh}
-                                            id='refresh'>{!auto ? 'Play auto refresh' : 'Stop auto refresh'}</button>
-                                </div>
-                            </div>
-                            {/*<div className={styles.devider}/>*/}
+                        </div>
+                        <div>
+                            <button className={styles.button} onClick={handleSubmitParams}>Submit Parameters
+                            </button>
+                        </div>
+                        <div className={styles.devider}/>
+                        <div className="parameters">Function generator</div>
+                        <div className={styles.subdevider}/>
+                        <div className={styles["function-selector"]}>
+                            <button className={styles.button} onClick={handleFunctionSelector} id='lin'
+                                    disabled={functionType === LINIAR}>
+                                Liniar
+                            </button>
+                            <button className={styles.button} onClick={handleFunctionSelector} id='expo'
+                                    disabled={functionType === EXPONENTIAL}>
+                                Exponential
+                            </button>
+                            <button className={styles.button} onClick={handleFunctionSelector} id='sin'
+                                    disabled={functionType === SINUSOIDAL}>
+                                Sinewave
+                            </button>
+                        </div>
+                        <div className={styles.devider}/>
+                        <div className="parameters">Select to display</div>
+                        <div className={styles.subdevider}/>
+                        <div className={styles["function-selector"]}>
+                            <button className={styles.button} onClick={handleFunctionDisplay} id='raw' data-active={raw}>
+                                Raw
+                            </button>
+                            <button className={styles.button} onClick={handleFunctionDisplay} id='noisy' data-active={noisy}>
+                                Noisy
+                            </button>
+                            <button className={styles.button} onClick={handleFunctionDisplay} id='filtered' data-active={filtered}>
+                                Filtered
+                            </button>
+                        </div>
+                        <div className={styles.devider}/>
+                        <div className="parameters">Auto Generate</div>
+                        <div className={styles.subdevider}/>
+                        <div>
+                            <button className={styles.button} onClick={handleAutoRefresh}
+                                    id='refresh'>{!auto ? 'Start' : 'Stop'}</button>
                         </div>
                     </div>
                 </div>
             </div>
-        )
+        </div>
+    )
 }
 
 export default KalmanApp;

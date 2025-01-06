@@ -41,15 +41,27 @@
     display: flex;
 }
 
-.slidecontainer {
-
-}
 
 .button {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     margin-right: 0.5rem;
     max-width: 50rem;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    background-color: #329bf9;
+    color: white;
+}
+
+.button:disabled {
+    background-color: #194e80;
+    color: gray;
+}
+
+.button[data-active="true"] {
+    background-color: #194e80;
+    color: gray;
 }
 
 .devider {
