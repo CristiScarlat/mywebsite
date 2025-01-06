@@ -26,13 +26,13 @@ export const metadata: Metadata = {
         title: "Cristi Scarlat",
         description: "Cristian Scarlat portfolio and blog articles",
         url: "https://cristiscarlat.com/",
-        images: ["/images/me.jpg"]
+        images: ["https://cristiscarlat.com/images/me.jpg"]
     },
     twitter: {
         title: "Cristi Scarlat",
         description: "Cristian Scarlat portfolio and blog articles",
         site: "https://cristiscarlat.com/",
-        images: ["/images/me.jpg"],
+        images: ["https://cristiscarlat.com/images/me.jpg"],
         card: "summary_large_image",
     }
 };
