@@ -31,7 +31,7 @@ const CircularProgressBar = ({
     <div className={styles.circularProgressBarWrapper} style={{
       width: `${2 * radius}px`,
       height: `${2 * radius}px`,
-      border: `1px solid ${bgColor}`,
+      border: `1px solid ${progressColor}`,
       backgroundImage: `conic-gradient(${progressColor} 0deg, ${progressColor} ${progressValue}deg, ${bgColor} ${progressValue}deg, ${bgColor} 360deg)`
     }}>
       <div className={styles.circularProgressBarInner} style={{

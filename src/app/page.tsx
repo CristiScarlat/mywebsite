@@ -32,23 +32,27 @@ const Home: NextPage = () => {
               <h1 className="text-center" style={{letterSpacing: 2}}>Cristian Scarlat</h1>
               <h3 className="text-center" style={{letterSpacing: 2}}>Software developer </h3>
               <h5 className="text-secondary text-sm-center">Timişoara, Timiş, Romania</h5>
-              <div className="my-3 text-center">
+              <div className="d-flex justify-content-center gap-3 my-3">
                 <a
                     href="https://github.com/CristiScarlat"
                     target="_blank"
                     rel="noreferrer"
+                    data-set="about"
+                    className="nav-link current"
                 >
                   <BsGithub
                       size="1.5rem"
-                      className="me-5"
+                      color="black"
                   />
                 </a>
                 <a
                     href="https://www.linkedin.com/in/cristian-scarlat-6839a942"
                     target="_blank"
                     rel="noreferrer"
+                    data-set="about"
+                    className="nav-link current"
                 >
-                  <BsLinkedin size="1.5rem"/>
+                  <BsLinkedin size="1.5rem" color="black"/>
                 </a>
               </div>
             </div>
