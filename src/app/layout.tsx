@@ -20,18 +20,21 @@ export const metadata: Metadata = {
     description: "Cristian Scarlat portfolio and blog articles",
     publisher: "Cristi Scarlat",
     keywords: "Cristi, Scarlat, blog, next js, react js, typescript, software developer ",
+    alternates: {
+        canonical: "https://cristiscarlat.com",
+    },
     openGraph: {
         siteName: "Cristi Scarlat",
         type: "website",
         title: "Cristi Scarlat",
         description: "Cristian Scarlat portfolio and blog articles",
-        url: "https://cristiscarlat.com/",
+        url: "https://cristiscarlat.com",
         images: ["https://cristiscarlat.com/images/me.jpg"]
     },
     twitter: {
         title: "Cristi Scarlat",
         description: "Cristian Scarlat portfolio and blog articles",
-        site: "https://cristiscarlat.com/",
+        site: "https://cristiscarlat.com",
         images: ["https://cristiscarlat.com/images/me.jpg"],
         card: "summary_large_image",
     }
