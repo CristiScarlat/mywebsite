@@ -43,12 +43,17 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable}`}>
-    <SideHeader />
-        {children}
-      <MobileFooter />
+      <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+          <SideHeader/>
+          {children}
+          <MobileFooter/>
+          <footer>
+              <div className="text-center text-secondary">
+                  © Cristian Scarlat 2025
+              </div>
+          </footer>
       </body>
-    </html>
+      </html>
   );
 }
