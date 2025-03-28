@@ -4,7 +4,7 @@
     border-radius: 5PX;
     background: black;
     padding: 1rem;
-    margin: auto;
+    margin: 1rem auto;
     cursor: pointer;
     color: var(--main-green-lite);
 }

@@ -8,6 +8,11 @@ const Blog = () => {
             title: "Implementing a simple one dimension Kalman Filter in JS",
             date: "July 19, 2018",
             link: "/blog/kalman"
+        },
+        {
+            title:"Securing Next.js API Routes with Token Authentication and HttpOnly Cookies",
+            date: "March 28, 2025",
+            link: "/blog/nextTokenAuth"
         }
     ]
     return(

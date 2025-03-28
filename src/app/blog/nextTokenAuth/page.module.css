@@ -1,0 +1,56 @@
+.container {
+    max-width: 65rem;
+    margin: 4rem auto 5rem auto;
+    padding: 1rem;
+    background-color: #000000de;
+    border-radius: 10px;
+}
+
+.section p {
+    color: #daebb8;
+    font-family: system-ui,Ubuntu,Droid Sans,sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.section ul {
+    color: #ebf7d4;
+    font-family: system-ui,Ubuntu,Droid Sans,sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.section h2 {
+    color: #95f9ce;
+    font-family: system-ui,Ubuntu,Droid Sans,sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.section h3 {
+    color: #a6d0f2;
+    font-family: system-ui,Ubuntu,Droid Sans,sans-serif;
+    font-weight: bold;
+    text-align: justify;
+}
+
+.section pre{
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.container a{
+    color: #6666ec;
+}
+
+.section pre {
+    white-space: break-spaces;
+}
+
+.linkToApp {
+    background-color: #202020;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
