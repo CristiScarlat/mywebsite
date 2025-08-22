@@ -41,7 +41,7 @@ const Portfolio = () => {
                     <img src="/images/wimapp.png" className={styles.cardImg}/>
                 </div>
                 <div>
-                    <p>wimapp.com</p>
+                    <p>wimapp.tech</p>
                     <div className="d-flex justify-content-center gap-3 p-2">
                         <SiTypescript size="1.5rem"/>
                         <SiReact size="1.5rem"/>
