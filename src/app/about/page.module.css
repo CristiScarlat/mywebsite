@@ -6,7 +6,11 @@
   border-radius: 10px;
 }
 
-.container p{
+.container p {
+  color: var(--main-green-lite);
+}
+
+.container .paragraph {
   color: var(--main-green-lite);
 }
 
@@ -77,5 +81,14 @@
 @media only screen and (max-width: 800px){
   .container>div{
     justify-content: center;
+  }
+}
+
+@media print {
+  .container p{
+    color: black;
+  }
+  .headerTitle {
+    color: black;
   }
 }

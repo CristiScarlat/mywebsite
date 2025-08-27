@@ -125,3 +125,12 @@ a {
     background: black;
   }
 }
+
+@media print {
+  body {
+    color: black!important;
+  }
+  .home-nav-link-mobile {
+    display: none;
+  }
+}

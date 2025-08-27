@@ -13,7 +13,7 @@ const About = () => {
                         <h1>Cristian Scarlat</h1>
                         <h2>Software developer </h2>
                         <h4>Timişoara, Timiş, Romania</h4>
-                        <div className="d-flex justify-content-center gap-3 my-3">
+                        <div className="d-flex justify-content-center gap-3 my-3 d-print-none">
                             <a
                                 href="https://github.com/CristiScarlat"
                                 target="_blank"
@@ -41,7 +41,17 @@ const About = () => {
                     </div>
                 </div>
                 <hr />
-                <section className={styles.section}>
+                <section className={`${styles.section} d-print-block d-none `}>
+                    <h3 id="summary" className={styles.sectionsTitles}>Contact</h3>
+                    <div className="">
+                        <p>0722205498 (Mobile)</p>
+                        <p>cristiscarlat1978@gmail.com</p>
+                        <p>www.linkedin.com/in/cristian-scarlat-6839a942 (LinkedIn)</p>
+                        <p>cristiscarlat.github.io/ (github)</p>
+                        <p>https://cristiscarlat.com (personal website)</p>
+                    </div>
+                </section>
+                <section >
                     <article>
                         <h3 id="summary" className={styles.sectionsTitles}>Summary</h3>
                         <p>
@@ -80,7 +90,7 @@ const About = () => {
                             Implemented document embedding (TensorFlow USE), semantic search, and context retrieval to augment LLM responses.
                             Developed a ChatGPT-like frontend (Next.js + Tailwind) with real-time interaction.
                         </p>
-                        <p>
+                        <div className={styles.paragraph}>
                             <h4>Project: RAG-powered Chat Application with Ollama, ChromaDB, and Express.js</h4>
                                 <ul>
                                     <li>
@@ -110,7 +120,7 @@ const About = () => {
                                         Designed system with <span className="text-success">modularity and scalability</span> in mind, enabling easy replacement of embedding models, storage backends, or UI layer.
                                     </li>
                                 </ul>
-                        </p>
+                        </div>
 
                     </article>
                     <article className="mt-5">

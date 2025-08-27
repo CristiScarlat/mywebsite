@@ -15,7 +15,7 @@ const DownloadBtn = () => {
         document.body.removeChild(link);
     };
     return(
-        <Button className={styles.iconBtn} variant="success" onClick={handleDownload}>
+        <Button className={`${styles.iconBtn} d-print-none`} variant="success" onClick={handleDownload}>
             <BsDownload size="1.2rem"/>
             Curriculum Vitae
         </Button>
