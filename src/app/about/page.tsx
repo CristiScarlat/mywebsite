@@ -69,6 +69,52 @@ const About = () => {
                     <h3 id="experience">Experience</h3>
                     <article className="mt-5">
                         <div>
+                            <h4 className={styles.articleTitles}>Yelo</h4>
+                            <h5>Software Developer</h5>
+                            <h5 className="text-secondary">
+                                April 2025 - Present
+                            </h5>
+                        </div>
+                        <p>
+                            Built a RAG-powered chat application using Dockerized microservices (Ollama, ChromaDB, Express.js).
+                            Implemented document embedding (TensorFlow USE), semantic search, and context retrieval to augment LLM responses.
+                            Developed a ChatGPT-like frontend (Next.js + Tailwind) with real-time interaction.
+                        </p>
+                        <p>
+                            <h4>Project: RAG-powered Chat Application with Ollama, ChromaDB, and Express.js</h4>
+                                <ul>
+                                    <li>
+                                        <span className="text-success">Architected and deployed</span> a multi-container environment using Docker Compose,
+                                        with separate services for Ollama (LLM inference), ChromaDB (vector database), and an Express.js REST API layer.
+                                    </li>
+                                    <li>
+                                        <span className="text-success">Implemented RAG (Retrieval Augmented Generation)</span> pipeline:
+                                            <ul>
+                                                <li>Preprocessed and chunked Markdown documents.</li>
+                                                <li>Generated embeddings using TensorFlow Universal Sentence Encoder (USE).</li>
+                                                <li>Stored vectors, metadata, and documents in ChromaDB for semantic search.</li>
+                                                <li>Retrieved context at query time and augmented prompts dynamically.</li>
+                                            </ul>
+                                    </li>
+                                    <li>
+                                        <span className="text-success">Built a REST API in Express.js</span> to manage chat sessions, handle embeddings, and forward requests to Ollama’s
+                                        REST API for both generate and chat endpoints.
+                                    </li>
+                                    <li>
+                                        <span className="text-success">Developed a ChatGPT-like frontend (Next.js + Tailwind)</span> that allows interactive Q&A, retrieves context from Chroma, and streams answers from Ollama in real time.
+                                    </li>
+                                    <li>
+                                        <span className="text-success">Optimized data ingestion pipeline</span> with concurrent workers to embed and store thousands of Markdown files efficiently.
+                                    </li>
+                                    <li>
+                                        Designed system with <span className="text-success">modularity and scalability</span> in mind, enabling easy replacement of embedding models, storage backends, or UI layer.
+                                    </li>
+                                </ul>
+                        </p>
+
+                    </article>
+                    <article className="mt-5">
+                        <div>
                             <h4 className={styles.articleTitles}>Software Development Academy</h4>
                             <h5>Javascript and React Trainner</h5>
                             <h5 className="text-secondary">
