@@ -48,13 +48,13 @@ const Header = () => {
                   <FaUser size="1.5rem" />
                   <span className="ms-3">About</span>
                 </Nav.Link>
-                <Nav.Link
+                {/* <Nav.Link
                   href="/portfolio"
                   className={pathname === "/portfolio" ? "current" : ""}
                 >
                   <FaBriefcase size="1.5rem" />
                   <span className="ms-3">Portfolio</span>
-                </Nav.Link>
+                </Nav.Link> */}
                 <Nav.Link
                   href="/contact"
                   className={pathname === "/contact" ? "current" : ""}
